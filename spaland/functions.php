@@ -116,21 +116,6 @@ function spaland_widgets_init() {
 }
 add_action( 'widgets_init', 'spaland_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function spaland_scripts() {
-	wp_enqueue_style( 'spaland-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'spaland-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'spaland-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'spaland_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -158,4 +143,8 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+// scripts css and js 
+require get_template_directory() . '/inc/scripts.php';
+
+require get_template_directory().'/inc/spland_walker_menu.php';
 
