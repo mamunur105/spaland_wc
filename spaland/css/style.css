@@ -523,7 +523,7 @@ img{
 ***/
 
 .main-header{
-	position:absolute;
+	position: relative;
 	left:0px;
 	top:0px;
 	z-index:999;
@@ -1597,7 +1597,7 @@ img{
 	position:relative;
 	z-index:10;
 	overflow:hidden;
-	margin-top: 50px;
+	/*margin-top: 50px;*/
 }
 
 .main-slider .tp-caption{

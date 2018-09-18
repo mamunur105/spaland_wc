@@ -14,20 +14,10 @@
 
 get_header();
 ?>
-
+ <div class="content-side col-md-8 col-sm-12 col-xs-12">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
-<h1>BODY </h1>
+
 		<?php
 		if ( have_posts() ) :
 
@@ -59,11 +49,16 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+
+
+
 		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+</div><!-- #primary -->
 
 <?php
 get_sidebar();
+
 get_footer();

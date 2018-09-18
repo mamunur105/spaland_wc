@@ -33,13 +33,29 @@
             	<div class="inner-container clearfix">
                     <div class="top-left">
                         <ul class="clearfix">
-                            <li><a href="#"><i class="fa fa-volume-control-phone"></i> 0555 123 12 12</a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourdomain.com</a></li>
+                            <?php if(cs_get_option( 'headet_top_phone' ) != ''):?>
+                            <li> <a href="#"><i class="fa fa-volume-control-phone"></i>
+                                     <?php  echo cs_get_option( 'headet_top_phone' ); ?>
+                                 </a> 
+                             </li>
+                            <?php endif; ?>
+                            <?php if(cs_get_option( 'headet_top_email' ) != ''):?>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i> 
+                                <!-- info@yourdomain.com -->
+                                <?php echo cs_get_option( 'headet_top_email' );  ?>
+                                </a>
+                            </li>
+                            <?php endif;  ?>
+
                         </ul>
                     </div>
-                    <div class="top-right">
-                        <div class="link-box"><a href="appointment.html">Book Now</a></div>
-                    </div>
+                    <?php if(cs_get_option( 'headet_top_right_button' ) == true ):?>
+                        <div class="top-right">
+                            <div class="link-box">
+                                <a href="<?php echo cs_get_option('headet_top_booking_link' )?>"><?php echo esc_html('Book Now'); ?></a></div>
+                        </div>
+                    <?php endif; ?>
+
                 </div>
             </div>
         </div>
@@ -51,7 +67,17 @@
                <div class="main-box clearfix">
                     <!--Logo Box-->
                     <div class="logo-box">
-                        <div class="logo"><a href="index-2.html"><img src="images/logo.png" alt=""></a></div>
+                        <div class="logo">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <?php
+                                $image_id = cs_get_option( 'main_logo' );
+                                $attachment = wp_get_attachment_image_src( $image_id, 'full' )[0];
+
+                            ?>
+                                <img src="<?php echo $attachment ?>" alt="Logo">
+
+                            </a>
+                        </div>
                     </div>
                     <!--Nav Outer-->
                     <div class="nav-outer clearfix">
@@ -244,8 +270,18 @@
         <!--End Sticky Header-->
     </header>
     <!--End Main Header -->
-	<div id="content" class="site-content">
+        <!--Main Slider-->
+    <section class="main-slider" style="width: 100%; max-height:250px " >
 
+        <img style="width: 100%;"  src="<?php echo get_template_directory_uri();?>/images/main-slider/image-1.jpg" />
+
+    </section>
+    <!--End Main Slider-->
+
+	<div id="content" class="site-content sidebar-page-container ">
+    <!-- Sidebar Page Container -->
+        <div class="auto-container">
+            <div class="row clearfix">
 
 
 

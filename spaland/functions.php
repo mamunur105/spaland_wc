@@ -148,3 +148,8 @@ require get_template_directory() . '/inc/scripts.php';
 
 require get_template_directory().'/inc/spland_walker_menu.php';
 
+
+// theme functiuon 
+
+require get_template_directory().'/lib-plugin/tgm/tgm-custom.php';
+

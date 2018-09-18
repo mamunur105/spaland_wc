@@ -31,7 +31,7 @@
  * Plugin:
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
-require_once THEME_PATH.'/plugin/tgm/class-tgm-plugin-activation.php';
+require_once get_template_directory().'/lib-plugin/tgm/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'woocom_register_required_plugins' );
 
@@ -58,14 +58,15 @@ function woocom_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
+		// array(
+		// 	'name'      => 'King Composer',
+		// 	'slug'      => 'kingcomposer',
+		// 	'required'  => true,
+		// ),
 		array(
-			'name'      => 'King Composer',
-			'slug'      => 'kingcomposer',
-			'required'  => true,
-		),
-		array(
-			'name'      => 'Redux',
-			'slug'      => 'redux-framework',
+			'name'      => 'Codestar',
+			'slug'      => 'codestar-framework',
+			'source'    => 'https://github.com/Codestar/codestar-framework/archive/master.zip',
 			'required'  => true,
 		),
 		array(
@@ -79,46 +80,44 @@ function woocom_register_required_plugins() {
 		// 	'required'  => true,
 		// ),
 
-		array(
-			'name'      => 'Yith Wishlist Plugin',
-			'slug'      => 'yith-woocommerce-wishlist',
-			'required'  => true,
-		),
-
+		// array(
+		// 	'name'      => 'Yith Wishlist Plugin',
+		// 	'slug'      => 'yith-woocommerce-wishlist',
+		// 	'required'  => true,
+		// ),
 
 		
-		
-		array(
-			'name'      => 'WPS Hide Login',
-			'slug'      => 'wps-hide-login',
-			'required'  => false,
-		),
-		array(
-			'name'      => 'YITH WooCommerce Compare',
-			'slug'      => 'yith-woocommerce-compare',
-			'required'  => true,
-		),
-		array(
-			'name'      => 'Security',
-			'slug'      => 'better-wp-security',
-			'required'  => true,
-		),
+		// array(
+		// 	'name'      => 'WPS Hide Login',
+		// 	'slug'      => 'wps-hide-login',
+		// 	'required'  => false,
+		// ),
+		// array(
+		// 	'name'      => 'YITH WooCommerce Compare',
+		// 	'slug'      => 'yith-woocommerce-compare',
+		// 	'required'  => true,
+		// ),
+		// array(
+		// 	'name'      => 'Security',
+		// 	'slug'      => 'better-wp-security',
+		// 	'required'  => true,
+		// ),
 		// array(
 		// 	'name'      => 'Wc Ajax Product Filter',
 		// 	'slug'      => 'wc-ajax-product-filter',
 		// 	'required'  => true,
 		// ),
-		array(
-			'name'      => 'Mailchimp For Wp',
-			'slug'      => 'mailchimp-for-wp',
-			'required'  => false,
-		),
-		array(
-			'name'      => 'New Social Media Widget',
-			'slug'      => 'new-social-media-widget',
-			'source'    => get_template_directory() . '/plugin/new-social-media-widget.zip',
-			'required'  => false,
-		),
+		// array(
+		// 	'name'      => 'Mailchimp For Wp',
+		// 	'slug'      => 'mailchimp-for-wp',
+		// 	'required'  => false,
+		// ),
+		// array(
+		// 	'name'      => 'New Social Media Widget',
+		// 	'slug'      => 'new-social-media-widget',
+		// 	'source'    => get_template_directory() . '/plugin/new-social-media-widget.zip',
+		// 	'required'  => false,
+		// ),
 
 		array(
 			'name'      => 'Facebook Messenger',
