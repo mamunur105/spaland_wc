@@ -11,3 +11,7 @@ Text Domain: spaland
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
+
+.news-block .image-box a {
+    color: #fff;
+}

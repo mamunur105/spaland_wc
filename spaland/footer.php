@@ -14,6 +14,10 @@
 	    </div>
 	</div><!-- #content -->
 
+<?php if ( is_home()) { ?>
+
+<?php // if ( (is_front_page() && is_home()) || (!is_front_page() && is_home()) ) { ?>
+
     <!-- Subscribe Section -->
     <section class="subscribe-section" style="background-image: url(<?php echo get_template_directory_uri();?>/images/background/10.jpg);">
         <div class="auto-container">
@@ -46,6 +50,35 @@
         </div>
     </section>
     <!--End Subscribe Section -->
+
+<?php } elseif( is_front_page()){
+	//Static homepage
+
+} else {
+
+	//everything else
+}
+
+
+
+
+
+// if ( is_front_page() && is_home() ) {
+//   	// Default homepage
+// } elseif ( is_front_page()){
+//    	//Static homepage
+// } elseif ( is_home()){
+
+//   	//Blog page
+
+// } else {
+
+// 	//everything else
+
+// }
+
+
+?>
 
     <!-- Main Footer -->
     <footer class="main-footer style-two">

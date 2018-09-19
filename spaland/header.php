@@ -196,7 +196,13 @@
         	<div class="auto-container clearfix">
                 <!--Logo-->
             	<div class="logo pull-left">
-                	<a href="index-2.html" class="img-responsive"><img src="images/logo.png" alt="" title=""></a>
+                        <a class="img-responsive"  href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <?php
+                                $image_id = cs_get_option( 'main_logo' );
+                                $attachment = wp_get_attachment_image_src( $image_id, 'full' )[0];
+                            ?>
+                                <img src="<?php echo $attachment ?>" alt="Logo">
+                        </a>
                 </div>
                     
                 <!--Right Col-->

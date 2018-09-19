@@ -15,7 +15,7 @@
 get_header();
 ?>
  <div class="content-side col-md-8 col-sm-12 col-xs-12">
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area blog-list">
 		<main id="main" class="site-main">
 
 		<?php
