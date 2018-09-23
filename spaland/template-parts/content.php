@@ -8,22 +8,13 @@
  */
 
 ?>
+<?php if(is_single()): ?> <div class="blog-detail"> <?php endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('news-block'); ?>>
 	<div class="inner-box">
 
  		<div class="image-box">
             <?php spaland_post_thumbnail(); ?>
-
-            <?php 
-
-				// $tags_list = get_the_tag_list( '', esc_html_x( ', ', ',', 'spaland' ) );
-				// if ( $tags_list ) {
-					/* translators: 1: list of tags. */
-					// printf( '<span class="tag">' . esc_html__( '%1$s', 'spaland' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-				// }
-
-            ?>
             <?php
 				$posttags = get_the_tags();
 				$count=0;
@@ -35,7 +26,7 @@
 				    }
 				  }
 				}
-				?>
+			?>
         </div>
 		  
 		<div class="lower-content">
@@ -53,33 +44,67 @@
 
 		    ?>
 		    <div class="text">
-			   <?php
-				the_content( sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'spaland' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				) );
 
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'spaland' ),
-					'after'  => '</div>',
-				) );
-				?>
+			   <?php 
+			   	if (!is_single()) {
+			   		the_excerpt();
+			   		
+			   	}else{
+			   		the_content();
+			   	}
+
+			    ?>
 			</div>
-		<?php if(!is_single()): ?>
-		    <div class="btn-box"><a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More ', 'spaland' ) ?><i class="fa fa-angle-double-right"></i></a></div>
-		<?php endif; ?>
+			<?php if(!is_single()): ?>
+			    <div class="btn-box"><a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More ', 'spaland' ) ?><i class="fa fa-angle-double-right"></i></a></div>
+			<?php endif; ?>
+
+
 
 		</div>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
+                        
+<?php if(is_single()): ?>
 
-                            
+	<div class="post-share-options clearfix">
+	    <div class="pull-left">
+	        <p>Tags : </p>
+	        <ul class="tags">
+	            <li><a href="#">Body</a>,</li>
+	            <li><a href="#">Care</a>,</li>
+	            <li><a href="#">Center</a>,</li>
+	            <li><a href="#">Spa</a>,</li>
+	        </ul>                               
+	    </div>
+	    <div class="pull-right">
+	        <p>Social Media : </p>
+	        <ul class="social-icon">
+	            <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
+	            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+	            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+	            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+	            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
+	        </ul>
+	    </div>
+	</div>
+	<div class="author-box">
+        <div class="inner-box">
+            <div class="image-box"><img src="http://localhost/wp/spaland/wp-content/uploads/2018/09/author-thumb.jpg" alt=""></div>
+            <span class="name">Mark Richardson</span>
+            <p>We will give you a complete account of the system, and expound the teachings of the great explorer of the truth, the master-builder of human happiness..</p>
+            <ul class="social-icons clearfix">
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+            </ul>
+        </div>
+    </div>
 
+
+
+<?php endif; ?>
+
+
+<?php if(is_single()): ?> </div> <?php endif; ?>
