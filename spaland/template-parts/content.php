@@ -68,23 +68,30 @@
 <?php if(is_single()): ?>
 
 	<div class="post-share-options clearfix">
-	    <div class="pull-left">
+	    <div class="pull-left ">
 	        <p>Tags : </p>
-	        <ul class="tags">
-	            <li><a href="#">Body</a>,</li>
-	            <li><a href="#">Care</a>,</li>
-	            <li><a href="#">Center</a>,</li>
-	            <li><a href="#">Spa</a>,</li>
-	        </ul>                               
+
+			<?php the_tags( '<ul class="tags single-page-tags" ><li>', ', </li> <li> ', '</li></ul>' ); ?>
+
+                              
 	    </div>
 	    <div class="pull-right">
 	        <p>Social Media : </p>
 	        <ul class="social-icon">
-	            <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
-	            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-	            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-	            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-	            <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
+				<?php 
+					/*Stuff for Pinterest*/
+					//getting the permalink
+					$postpermalink = urlencode( get_permalink() );
+
+					//getting the thumbnail
+					$imageurl = urlencode( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) );
+					/*End of Pinterest*/
+				?>
+
+	            <li><a target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&amp;media=<?php echo $imageurl;?>&amp;description=<?php echo rawurlencode(get_the_title()); ?>"><span class="fa fa-pinterest"></span></a></li>
+				<li> <a target="_blank" href="https://www.facebook.com/sharer?u=<?php the_permalink();?>&t=<?php the_title(); ?>"> <span class="fa fa-facebook"></span> </a> </li>
+	            <li> <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"> <span class="fa fa-google-plus"></span> </a> </li>
+	            <li> <a target="_blank" href="http://twitter.com/intent/tweet?text=Currently reading <?php the_title(); ?>&amp;url=<?php the_permalink(); ?>" title="Click to share this post on Twitter"> <span class="fa fa-twitter"></span> </a> </li>
 	        </ul>
 	    </div>
 	</div>

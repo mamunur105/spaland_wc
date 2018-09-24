@@ -1,1 +1,2 @@
 1. single blog post dynamik is not compleate 
+2. single post social share button check after upload ..

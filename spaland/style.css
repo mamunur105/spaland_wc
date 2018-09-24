@@ -14,6 +14,9 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 .news-block .image-box a {
     color: #fff;
 }
+.blog-detail .post-share-options .tags.single-page-tags a:hover{
+	background-color: transparent;
+}
 /*coment form */
 /*Comment Output*/
  ol.comment-list {
