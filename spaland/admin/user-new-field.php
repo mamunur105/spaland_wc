@@ -1,5 +1,5 @@
 <?php
-
+// add new field 
 function custom_user_profile_fields($user){ ?>
 
     <table class="form-table">
@@ -45,8 +45,9 @@ add_action( "user_new_form", "custom_user_profile_fields" );
 
 function save_custom_user_profile_fields($user_id){
     # again do this only if you can
-    if(!current_user_can('manage_options'))
+    if(!current_user_can('manage_options')){
         return false;
+    }
     # save my custom field
     update_usermeta($user_id, 'user_facebook', $_POST['user_facebook']);
     update_usermeta($user_id, 'google_plus', $_POST['google_plus']);

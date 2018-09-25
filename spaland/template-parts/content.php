@@ -106,7 +106,6 @@
 					$fname = get_the_author_meta('first_name');
 					$lname = get_the_author_meta('last_name');
 					$full_name = '';
-
 					if( empty($fname) && empty( $lname ) ){
 						$full_name =  get_the_author_meta("nickname");
 					} elseif(empty($fname)){
@@ -120,13 +119,11 @@
 				?>
 
             </span>
-            <p> 
-            	<?php 
+            <p>  <?php 
 					$meta_data = get_post_meta( get_the_id(), '_custom_post_options', true );
-					echo $meta_data['author_post_quote']	;
+					echo !empty($meta_data['author_post_quote']) ? $meta_data['author_post_quote'] : ''	;
 				?>
             </p>
-
             <ul class="social-icons clearfix">
                 <li><a href="<?php echo get_user_meta( get_the_author_meta( 'ID' ), 'google_plus', true); ?>"><i class="fa fa-google-plus"></i></a></li>
                 <li><a href="<?php echo get_user_meta( get_the_author_meta( 'ID' ), 'twitter_profile', true); ?>"><i class="fa fa-twitter"></i></a></li>
@@ -135,8 +132,6 @@
             </ul>
         </div>
     </div>
-
-
 
 <?php endif; ?>
 
