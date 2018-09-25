@@ -18,15 +18,14 @@ $options[]    = array(
   'sections'  => array(
 
     array(
-      'name'   => 'section_4',
+      'name'   => 'author_post_meta',
       'fields' => array(
 
         array(
-          'id'    => 'section_4_text',
-          'type'  => 'text',
-          'title' => 'Text Field',
+          'id'    => 'author_post_quote',
+          'type'  => 'textarea',
+          'title' => 'Post Author Quote',
         ),
-
       ),
     ),
 

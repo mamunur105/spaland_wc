@@ -97,14 +97,41 @@
 	</div>
 	<div class="author-box">
         <div class="inner-box">
-            <div class="image-box"><img src="http://localhost/wp/spaland/wp-content/uploads/2018/09/author-thumb.jpg" alt=""></div>
-            <span class="name">Mark Richardson</span>
-            <p>We will give you a complete account of the system, and expound the teachings of the great explorer of the truth, the master-builder of human happiness..</p>
+            <div class="image-box">
+            	<img src="http://localhost/wp/spaland/wp-content/uploads/2018/09/author-thumb.jpg" alt="">
+            	<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>
+            </div>
+            <span class="name">
+				<?php
+					$fname = get_the_author_meta('first_name');
+					$lname = get_the_author_meta('last_name');
+					$full_name = '';
+
+					if( empty($fname) && empty( $lname ) ){
+						$full_name =  get_the_author_meta("nickname");
+					} elseif(empty($fname)){
+						$full_name = $lname;
+					} elseif(empty($lname ) ){
+						$full_name = $fname;
+					}else {
+						$full_name = "{$fname} {$lname}";
+					}
+					echo $full_name;
+				?>
+
+            </span>
+            <p> 
+            	<?php 
+					$meta_data = get_post_meta( get_the_id(), '_custom_post_options', true );
+					echo $meta_data['author_post_quote']	;
+				?>
+            </p>
+
             <ul class="social-icons clearfix">
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="<?php echo get_user_meta( get_the_author_meta( 'ID' ), 'google_plus', true); ?>"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="<?php echo get_user_meta( get_the_author_meta( 'ID' ), 'twitter_profile', true); ?>"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="<?php echo get_user_meta( get_the_author_meta( 'ID' ), 'user_facebook', true); ?>"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="<?php echo get_user_meta( get_the_author_meta( 'ID' ), 'dribbble_profile', true); ?>"><i class="fa fa-dribbble"></i></a></li>
             </ul>
         </div>
     </div>

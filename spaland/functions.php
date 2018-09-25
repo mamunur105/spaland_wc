@@ -153,21 +153,6 @@ require get_template_directory().'/inc/spland_walker_menu.php';
 // theme functiuon 
 
 require get_template_directory().'/lib-plugin/tgm/tgm-custom.php';
+// admin option 
+require get_template_directory().'/admin/user-new-field.php';
 
-/**
- * Add new user profile fields
- *
- */
-
-if ( ! function_exists( 'ld_modify_contact_methods' ) ) :
-
-    function ld_modify_contact_methods( $contactmethods ) {
-        $contactmethods['linkedin'] = __( 'Linked In' );
-        $contactmethods['youtube'] = __( 'YouTube' );
-        $contactmethods['instagram'] = __( 'Instagram' );
-
-        return $contactmethods;
-    }
-    add_filter('user_contactmethods','ld_modify_contact_methods', 10, 1);
-
-endif;
