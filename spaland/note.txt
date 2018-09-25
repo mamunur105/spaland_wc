@@ -1,2 +1,8 @@
-1. single blog post dynamik is not compleate 
+
+..(Done).. 1. single blog post dynamik is not compleate  
+
 2. single post social share button check after upload ..
+3. sidebar dynamic 
+4. product dynamic 
+5. single product dynamic .
+6. home page product dynamic 
