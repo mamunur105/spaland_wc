@@ -50,3 +50,10 @@ form#commentform input {
     height: 40px;
     margin-bottom: 20px;
 }
+header.main-header.header-style-three {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+}

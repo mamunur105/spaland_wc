@@ -37,6 +37,12 @@ $options[]      = array(
       'type'    => 'image',
       'title'   => 'Theme Logo ',
     ),
+    array(
+      'id'         => 'preeloder',
+      'type'       => 'switcher',
+      'title'      => 'Preloader Show/hide',
+      'default'    => true
+    ),
 
     // end: a field
 
@@ -108,6 +114,30 @@ $options[]   = array(
   )
 );
 
+// ----------------------------------------
+// a option section for  page  -
+// ----------------------------------------
+$options[]      = array(
+  'name'        => 'page',
+  'title'       => 'Page',
+  'icon'        => 'fa fa-home',
+
+  // begin: fields
+  'fields'      => array(
+
+    // begin: a field
+    array(
+      'id'      => 'page-banner',
+      'type'    => 'image',
+      'title'   => 'Page banner',
+    ),
+    
+
+    // end: a field
+
+
+  ), // end: fields
+);
 
 
 

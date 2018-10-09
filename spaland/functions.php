@@ -42,6 +42,7 @@ if ( ! function_exists( 'spaland_setup' ) ) :
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
         add_theme_support( 'post-thumbnails' );
+        add_theme_support('woocommerce');
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
@@ -118,6 +119,15 @@ function spaland_widgets_init() {
 add_action( 'widgets_init', 'spaland_widgets_init' );
 
 
+// codeser inactive plugin error 
+function theme_option($option){
+    if (function_exists('cs_get_option')) {
+       return cs_get_option($option);
+    } else{
+        return false ;
+    }
+}
+
 /**
  * Implement the Custom Header feature.
  */
@@ -156,3 +166,4 @@ require get_template_directory().'/lib-plugin/tgm/tgm-custom.php';
 // admin option 
 require get_template_directory().'/admin/user-new-field.php';
 
+// require get_template_directory().'/inc/archive-product-function.php'; 

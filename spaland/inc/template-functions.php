@@ -35,3 +35,5 @@ function spaland_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'spaland_pingback_header' );
+
+
