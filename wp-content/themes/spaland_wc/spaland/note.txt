@@ -6,3 +6,5 @@
 4. product dynamic 
 5. single product dynamic .
 6. home page product dynamic 
+
+passphrase => (ssh-agent)
